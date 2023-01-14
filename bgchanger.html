@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>BG CHANGER</title>
+	<style type="text/css">
+		.table1{
+			border: 1px solid black;
+		}
+	</style>
+</head>
+<body class="body" id="bodyy">
+	<button class = "button" id="button" type="button">click</button>
+	<br>
+	<style type="text/css">
+		.button{
+			left : 45%;
+			position: absolute;
+			width: 200px;
+		}
+	</style>
+	<p id='p'></p>
+	<script type="text/javascript">
+		var but = document.getElementById("button");
+		var colors = ['red','blue','green','yellow','orange'];
+		var body1 = document.getElementById("bodyy");
+		but.addEventListener("click",function bg(){
+			body1.style.backgroundColor = colors[Math.floor(Math.random()*colors.length)];
+		});
+	</script>
+	<button class="button" id="button1" type="button" onclick="table()">Click for table</button>
+	<style type="text/css">
+		.button1{
+			left : 45%;
+			position: absolute;
+			width: 200px;
+		}
+	</style>
+	<p class = "tabel1" id = "table1"></p>
+	<script type="text/javascript">
+		function table(){
+			var people = ["Anakin","Obi-Wan","Luke","Leia"];
+		var text = '';
+		var but1 = document.getElementById("button1");
+		var j = 1;
+		for(i=0;i<people.length;i++){
+				text += "<tr>";
+				text += '<td>'+j+'</td>'
+				text += "<td>"+people[i]+"</td>";
+				text += "</tr>";
+				j +=1;
+		}
+		document.getElementById("table1").innerHTML = ("<table border=1>"+text+"</table>");
+		}
+	</script>
+</body>
+</html>
